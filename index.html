@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="customzationApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Customzation</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+
+<div class="container" ng-controller="mainController">
+    <div class="jumbotron">
+        <h1 ng-bind="info.dataModel.name"></h1>
+        <p ng-bind="info.dataModel.desc"></p>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" ng-hide="info.config.hideColumn1">
+            <h3>Column1</h3>
+            <p>column1 title</p>
+            <p>column1 desc</p>
+        </div>
+        <div class="col-sm-4" ng-hide="info.config.hideColumn2">
+            <h3>Column2</h3>
+            <p>column12 title</p>
+            <p>column12 desc</p>
+        </div>
+        <div class="col-sm-4" ng-hide="info.config.hideColumn3">
+            <h3>Column3</h3>
+            <p>column13 title</p>
+            <p>column13 desc</p>
+        </div>
+    </div>
+    <cus-container template-url="{{info.config.templateUrl}}"></cus-container>
+
+    <!--<cus-container locale="{{locale}}" user="{{account}}"></cus-container>-->
+</div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="js/main.js"></script>
+<script src="js/main.controller.js"></script>
+<script src="js/main.service.js"></script>
+<script src="js/main.directive.js"></script>
+
+</body>
+</html>
